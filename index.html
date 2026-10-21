@@ -3,29 +3,128 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Comly</title>
-<meta name="description" content="Comly connects neighbors who need small jobs done with local helpers, including teens looking for their first work.">
+<title>Comly · Neighborhood help, safety-checked</title>
+<meta name="description" content="Comly connects neighbors who need small jobs done with trusted local helpers, including teens looking for their first work. Every job is safety-checked.">
+<link rel="icon" href="favicon.png">
+<meta property="og:title" content="Comly · Neighborhood help, safety-checked">
+<meta property="og:description" content="Find a trusted neighbor for small jobs. Every job is safety-checked, contact stays private, and Comly never takes a cut.">
+<meta property="og:image" content="https://comly.app/logo.png">
 <style>
-  :root { --bg:#fff; --ink:#1b1a20; --muted:#4b4956; --accent:#4c1d95; --rule:#e4e2e9; }
-  @media (prefers-color-scheme: dark) { :root { --bg:#131118; --ink:#eceaf2; --muted:#b3aec0; --accent:#c4b5fd; --rule:#2c2934; } }
-  body { margin:0; background:var(--bg); color:var(--ink); font:17px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
-  main { max-width:560px; margin:0 auto; padding:96px 24px; }
-  h1 { font-size:44px; letter-spacing:-0.02em; margin:0 0 8px; color:var(--accent); }
-  p { margin:0 0 18px; color:var(--muted); }
-  nav { margin-top:36px; padding-top:20px; border-top:1px solid var(--rule); }
-  a { color:var(--accent); margin-right:22px; }
+  :root {
+    color-scheme: light dark;
+    --bg: #ffffff;
+    --ink: #1b1a20;
+    --muted: #4b4956;
+    --rule: #e4e2e9;
+    --accent: #4c1d95;
+    --panel: #f6f4fa;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #131118;
+      --ink: #eceaf2;
+      --muted: #b3aec0;
+      --rule: #2c2934;
+      --accent: #c4b5fd;
+      --panel: #1c1922;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  main { max-width: 56rem; margin: 0 auto; padding: 3.5rem 1.25rem 4rem; }
+  .hero { text-align: center; max-width: 36rem; margin: 0 auto; }
+  .hero img { width: 112px; height: 112px; border-radius: 26px; box-shadow: 0 6px 24px rgba(0,0,0,.12); }
+  h1 { font-size: clamp(2rem, 6vw, 2.9rem); line-height: 1.1; letter-spacing: -0.02em; margin: 1.5rem 0 .75rem; }
+  .lede { font-size: 1.15rem; color: var(--muted); margin: 0 0 1.75rem; }
+  .badge {
+    display: inline-block;
+    padding: .7rem 1.4rem;
+    border-radius: 999px;
+    background: var(--accent);
+    color: var(--bg);
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .soon { display: block; margin-top: .6rem; font-size: .85rem; color: var(--muted); }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    gap: 1rem;
+    margin: 3.5rem 0 0;
+  }
+  .card { background: var(--panel); border: 1px solid var(--rule); border-radius: 14px; padding: 1.25rem; }
+  .card h2 { font-size: 1.05rem; margin: 0 0 .4rem; }
+  .card p { margin: 0; color: var(--muted); font-size: .95rem; }
+  .who { margin: 3.5rem auto 0; max-width: 40rem; }
+  .who h2 { font-size: 1.3rem; text-align: center; margin: 0 0 1rem; }
+  .who p { color: var(--muted); margin: 0 0 .85rem; }
+  .tasks { text-align: center; color: var(--muted); font-size: .95rem; margin: 2.5rem 0 0; }
+  footer {
+    margin-top: 3.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--rule);
+    font-size: .85rem;
+    color: var(--muted);
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem 1.25rem;
+  }
+  a { color: var(--accent); }
 </style>
 </head>
 <body>
 <main>
-  <h1>comly</h1>
-  <p>Small jobs. Real help. Next door.</p>
-  <p>Comly connects neighbors who need a hand with local helpers nearby, including teens looking for their first work. Coming soon to iPhone.</p>
-  <nav>
+  <section class="hero">
+    <img src="logo.png" alt="Comly logo">
+    <h1>Need a hand? It's probably right next door.</h1>
+    <p class="lede">Comly connects neighbors who need small jobs done with trusted local helpers, including teens looking for their first work.</p>
+    <!-- When the App Store listing is live, change this href to the listing URL and the text to "Download on the App Store". -->
+    <span class="badge">Coming soon to iPhone</span>
+    <span class="soon">Free to use. Comly never takes a cut.</span>
+  </section>
+
+  <section class="grid">
+    <div class="card">
+      <h2>Safety-checked jobs</h2>
+      <p>Every job gets a safety label before helpers see it. Teens can only apply to work suited to their age, and work that isn't allowed is never listed.</p>
+    </div>
+    <div class="card">
+      <h2>Your number stays private</h2>
+      <p>Phone numbers and exact addresses stay hidden until a poster accepts a specific helper for a specific job.</p>
+    </div>
+    <div class="card">
+      <h2>Parents stay in the loop</h2>
+      <p>Helpers under 18 can ask a parent or guardian to approve them by email. Some jobs, like babysitting, require it.</p>
+    </div>
+    <div class="card">
+      <h2>Fair pay, no fees</h2>
+      <p>Comly suggests a fair price, then you and your helper agree on pay and settle it directly.</p>
+    </div>
+  </section>
+
+  <section class="who">
+    <h2>For everyone on the block</h2>
+    <p><strong>Need help?</strong> Post a job in under a minute, compare applicants by their reviews and verification, and accept the one you trust.</p>
+    <p><strong>Teens:</strong> find paid work you can walk to, and build a reputation with every job you finish.</p>
+    <p><strong>Seniors:</strong> Simple Mode has bigger buttons, preset tasks and fewer steps.</p>
+  </section>
+
+  <p class="tasks">Snow shoveling · Lawn mowing · Leaf cleanup · Dog walking · Pet sitting · Babysitting · Tutoring · Tech help · Moving help · Errands · Car washing · Plant watering · House sitting</p>
+
+  <footer>
+    <a href="support/">Support</a>
     <a href="terms/">Terms of Service</a>
     <a href="privacy/">Privacy Policy</a>
-    <a href="mailto:comlyapp@protonmail.com">Contact</a>
-  </nav>
+    <a href="delete-account/">Delete your account</a>
+    <a href="mailto:comlyapp@protonmail.com">comlyapp@protonmail.com</a>
+  </footer>
 </main>
 </body>
 </html>
