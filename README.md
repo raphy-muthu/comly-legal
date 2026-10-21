@@ -7,6 +7,7 @@ Public legal pages for Comly, served by GitHub Pages at https://comly.app.
 | https://comly.app/terms | `terms/index.html` |
 | https://comly.app/privacy | `privacy/index.html` |
 | https://comly.app/delete-account | `delete-account/index.html` |
+| https://comly.app/contact | `contact/index.html` |
 | https://comly.app/ | `index.html` (App Store marketing URL) |
 | https://comly.app/support | `support/index.html` (App Store support URL) |
 

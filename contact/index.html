@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact · Comly</title>
+<meta name="description" content="How to contact the Comly team.">
+<link rel="icon" href="../favicon.png">
+<style>
+  :root {
+    color-scheme: light dark;
+    --bg: #ffffff;
+    --ink: #1b1a20;
+    --muted: #4b4956;
+    --rule: #e4e2e9;
+    --accent: #4c1d95;
+    --panel: #f6f4fa;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #131118;
+      --ink: #eceaf2;
+      --muted: #b3aec0;
+      --rule: #2c2934;
+      --accent: #c4b5fd;
+      --panel: #1c1922;
+    }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 16px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, sans-serif;
+    -webkit-text-size-adjust: 100%;
+  }
+  main { max-width: 46rem; margin: 0 auto; padding: 2.5rem 1.25rem 5rem; }
+  .home { display: inline-flex; align-items: center; gap: .5rem; text-decoration: none; color: var(--ink); font-weight: 600; margin-bottom: 1.5rem; }
+  .home img { width: 32px; height: 32px; border-radius: 8px; }
+  h1 { font-size: 1.75rem; line-height: 1.2; margin: 0 0 .35rem; }
+  h2 { font-size: 1.05rem; margin: 0 0 .35rem; }
+  p { color: var(--muted); margin: 0 0 .85rem; }
+  a { color: var(--accent); }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--rule);
+    border-radius: 12px;
+    padding: 1.1rem 1.25rem;
+    margin: 1.25rem 0 0;
+  }
+  .card p:last-child { margin-bottom: 0; }
+  .value { font-size: 1.1rem; color: var(--ink); font-weight: 600; user-select: all; -webkit-user-select: all; word-break: break-all; }
+  button {
+    font: inherit;
+    font-size: .9rem;
+    margin-top: .6rem;
+    padding: .45rem 1rem;
+    border-radius: 999px;
+    border: 1px solid var(--accent);
+    background: transparent;
+    color: var(--accent);
+    cursor: pointer;
+  }
+  .urgent { border-left: 3px solid #b91c1c; padding-left: .9rem; margin-top: 2rem; }
+  footer { margin-top: 3rem; padding-top: 1rem; border-top: 1px solid var(--rule); font-size: .85rem; }
+  footer a { margin-right: 1.1rem; }
+</style>
+</head>
+<body>
+<main>
+  <a class="home" href="../"><img src="../logo.png" alt="">Comly</a>
+  <h1>Contact Comly</h1>
+  <p>We read every message. For anything about a specific job or person, the in-app ticket is fastest, because it includes the details we need.</p>
+
+  <div class="card">
+    <h2>Email</h2>
+    <p class="value" id="email">comlyapp@protonmail.com</p>
+    <button type="button" id="copy">Copy email address</button>
+  </div>
+
+  <div class="card">
+    <h2>In the app</h2>
+    <p>Profile → Help &amp; support → Submit Ticket. You can follow its status under "My Tickets".</p>
+  </div>
+
+  <div class="card">
+    <h2>Mail</h2>
+    <p class="value">Comly<br>910 Morris Ave<br>Bryn Mawr, PA 19010</p>
+  </div>
+
+  <p class="urgent"><strong>If anyone is in danger, call 911 first.</strong> Comly is not an emergency service.</p>
+
+  <footer>
+    <a href="../">Home</a>
+    <a href="../support/">Support</a>
+    <a href="../terms/">Terms of Service</a>
+    <a href="../privacy/">Privacy Policy</a>
+    <a href="../delete-account/">Delete your account</a>
+  </footer>
+</main>
+<script>
+  // Copying works even where a mailto: link can't open a mail app.
+  document.getElementById('copy').addEventListener('click', function () {
+    var btn = this;
+    var email = document.getElementById('email').textContent.trim();
+    function done(ok) {
+      btn.textContent = ok ? 'Copied!' : 'Select the address above to copy it';
+      setTimeout(function () { btn.textContent = 'Copy email address'; }, 2500);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(email).then(function () { done(true); }, function () { done(false); });
+    } else {
+      done(false);
+    }
+  });
+</script>
+</body>
+</html>
